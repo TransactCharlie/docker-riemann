@@ -1,6 +1,6 @@
 # Docker-Riemann
 
-A build of the [riemann metrics platform](http://riemann.io) for docker using alpine linux.
+A build of the [riemann metrics platform](http://riemann.io) for docker using alpine linux. Targets the latest (as of 2017-10-19) stable release of riemann: [riemann 0.2.14](https://github.com/riemann/riemann/releases/tag/0.2.14)
 
 * [Image Details](#image-details)
   * [Build / Docker Image Status](#build--docker-image-status)
