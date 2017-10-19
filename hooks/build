@@ -4,8 +4,7 @@
 # $IMAGE_NAME is injected bt dockercloud for us to tag our images with
 
 docker build \
-	--build-arg VCS_REF=`git rev-parse —-short HEAD` \
+	--build-arg VCS_REF=`git rev-parse --short HEAD` \
 	--build-arg BUILD_DATE=`date -u +”%Y-%m-%dT%H:%M:%SZ”` \
 	-t "${IMAGE_NAME}" \
-	-t "${IMAGE_NAME}:0.2.14" \
 	.
