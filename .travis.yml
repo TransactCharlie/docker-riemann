@@ -1,0 +1,18 @@
+language: generic
+sudo: required
+services:
+    - docker
+
+script:
+    # Build our app and collect the libs -- exctract it from the container into the
+    - make
+
+after_success:
+    - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - docker push transactcharlie/riemann
+
+env:
+  global:
+  - secure: "JXPdvPHWKd3v2UQfOXeV17xR9xXX8/q/Bu6Uhsm1YeivvjamzKlKs/iVKnJSvHuKlm3lJZJBKdE1u45i2hgtJJsFhB8Q2kqvwuXN/wwZfRflKKMvCq0tyoE8w12EyN2n067qr1LLp7H1X7eo3sKCv62uMEWk+47ctRRr9ooI6Ml5+2Bk0qsnhPHO0mH4PenFaRp+eCRzEafqZNxuMMobi6K9pub8CTLhcpxrenfdJGZINWnoHy/ssBxijesMUY1mQjWJFgA+QTSgIMmsRbCVkC+Oc488KteI+xG1LScwM4pkmmxAq+IpN35NikD5JUn4XeqL2a2VZQlLCx7YTD4N27xEsPgGBc01mwthXemQx6hK2sgO99my6V3N7d5ZI5ZHhGW3XMPUMNQKNdtcg9T+YnWotF6tkbnupIwcoETYcnzhaNcJe42bkHtXizv6zF3XLA/U2Ho3mK0VzT3ndbcPJla0P0c3yZWeVQmiocNSFpGQM2hSw+j01GZBURKSldku8ngypMZ/fqTyjxa3HY5mSvv2wxa15kFM8le7HT9n+uH2zMhTPHAdQqGfzsEYsFq0xZ4y715RKZBcZBtAjKB1mawioxbEjFHx9SoFtdiOOak5q5tJRocy87AS+Yg8yJv/cgEpXWdiVbEJ8atodQjdCHvsopASs55ubThN4ZkDbSQ="
+
+  - secure: "MQFYf8CE5AV9WIR9KWskYcTblF0d3cV3PgvZqx/nyBHPm0ldp3c8XmihmO7a7x6VnLCXykS1vkR8y5aM+2AuwGbQSlf5ivYAwgNlCRy7nDlaTxNt5x1aUB07GOJDbj/yRJoU+NMmV+NDTvWG+DOTFR8fkGL7UJw/I5KbODPZdDP2PiV/bcJhsEL3dt9oWVwb1dxYpMZYR8enaVMPbEf7OTGyV46mIEyhb6GF1n2y+3vVD+ad/wDnpu5bPNvOzDpMo8m4AEsga4sc7aVePmmnKUorjgJ3BIarT6Zg4EC7w52xO1yJLT1Dug7k3IgYQVaKX8KZrpwJ1PGqCsbBYbdOzDoIJbdhnw6gZEUUloIDIWmBI2FBPC4sHVve9/SxRyV/dKkjLkrMTzP5EveC/N7kIQ2Zu1A5Cq4Tf7p57WLzvQIyG4zysVOFk9Mjc8UyrABFAhWohf1AUf0Un2oiChWIuhRrI9estslRpuc1pFyVn5XP1V6DatEoowBny2ceyuoWmFqNSRIz6sfK6OoZ1p+LijU9E4u1hYnKQY2dzTY+Cpbf1GUkkm1j88riFfHkvLXJxnWGKHQMYofdL9l5RrMTR6D0cwK298v1RKWo41GV32LtqaLxqle5yhuwIiqAvyd/RZPwVLmUlHcoVh4a3I683OrVdJfgZq+b0h+uT3HiVOE="
