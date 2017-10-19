@@ -1,0 +1,24 @@
+FROM openjdk:8-alpine
+MAINTAINER TransactCharlie
+
+ENV RIEMANN_VERSION 0.2.14
+
+# Install Riemann
+RUN apk update \
+ && apk add openssl \
+ && wget https://github.com/riemann/riemann/releases/download/$RIEMANN_VERSION/riemann-$RIEMANN_VERSION.tar.bz2 \
+ && tar xvfj riemann-$RIEMANN_VERSION.tar.bz2 \
+ && mv riemann-$RIEMANN_VERSION /riemann \
+ && rm riemann-$RIEMANN_VERSION.tar.bz2
+
+# / after this will point to /riemann (chroot analogue)
+WORKDIR /riemann
+
+## hack shell wrapper to use busybox sh (we don't have bash)
+RUN sed -ie 's/env bash/env sh/' bin/riemann
+
+## Default Expose Ports
+EXPOSE 5555/tcp 5555/udp 5556
+
+ENTRYPOINT ["bin/riemann"]
+CMD ["/config/riemann.config"]

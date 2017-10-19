@@ -1,0 +1,13 @@
+---
+version: '3'
+services:
+  riemann:
+    image: transactcharlie/riemann:latest
+    volumes:
+      - ./config-volume:/config
+    ports:
+      - "5555:5555/tcp"
+      - "5555:5555/udp"
+      - "5556:5556"
+      - "2003:2003"
+...
