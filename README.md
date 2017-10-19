@@ -2,24 +2,29 @@
 
 A build of the [riemann metrics platform](http://riemann.io) for docker using alpine linux.
 
-* [Docker\-Riemann](#docker-riemann)
-  * [Build Details](#build-details)
-    * [Quickstart](#quickstart)
-  * [Configuration](#configuration)
-    * [Injecting Config](#injecting-config)
-    * [Example Config With Docker Compose](#example-config-with-docker-compose)
-    * [Baking Configuration Into Your Images](#baking-configuration-into-your-images)
+* [Image Details](#image-details)
+  * [Build / Docker Image Status](#build--docker-image-status)
+* [Quickstart](#quickstart)
+* [Configuration](#configuration)
+  * [Injecting Config](#injecting-config)
+  * [Example Config With Docker Compose](#example-config-with-docker-compose)
+  * [Baking Configuration Into Your Images](#baking-configuration-into-your-images)
 
-## Build Details
+## Image Details
 This image is built against base image: [openjdk:8-alpine](https://hub.docker.com/_/openjdk/) with an entrypoint targetting `bin/riemann`. The image looks for configuration by default in /config/riemann.config (see the [Configuration](#configuration) section for more details) and you can override that, or pass jvm / riemann command options by overriding the CMD section:
 
 ```Dockerfile
-...
 ENTRYPOINT ["bin/riemann"]
 CMD ["/config/riemann.config"]
 ```
 
-### Quickstart
+### Build / Docker Image Status
+
+[![Build Status Status](https://travis-ci.org/TransactCharlie/docker-riemann.svg?branch=master)](https://travis-ci.org/TransactCharlie/docker-riemann)
+[![](https://images.microbadger.com/badges/image/transactcharlie/riemann.svg)](https://microbadger.com/images/transactcharlie/riemann "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/transactcharlie/riemann.svg)](https://microbadger.com/images/transactcharlie/riemann "Get your own version badge on microbadger.com")
+</p>
+
+## Quickstart
 
 Riemann without your custom [configuration](#configuration) is pretty pointless but if you want to check that this image actually runs you can use the riemann default configuration and play about with command line options like so:
 

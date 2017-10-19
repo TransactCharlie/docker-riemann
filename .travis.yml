@@ -10,6 +10,7 @@ script:
 after_success:
     - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - docker push transactcharlie/riemann
+    - curl -X POST https://hooks.microbadger.com/images/transactcharlie/riemann/lXAg24sNk6jqUziqnQdswAxzrao=
 
 env:
   global:
