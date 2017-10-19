@@ -1,7 +1,18 @@
 FROM openjdk:8-alpine
 MAINTAINER TransactCharlie
 
+ARG VCS_REF
+ARG BUILD_DATE
 ENV RIEMANN_VERSION 0.2.14
+
+LABEL org.label-schema.name="Riemann" \
+      org.label-schema.description="Riemann monitoring system on alpine linux" \
+      org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.url="http://riemann.io" \
+      org.label-schema.version=$RIEMANN_VERSION \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.vcs-url="https://github.com/TransactCharlie/docker-riemann"
+
 
 # Install Riemann
 RUN apk update \
