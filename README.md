@@ -3,7 +3,7 @@
 A build of the [riemann metrics platform](http://riemann.io) for docker using alpine linux. Targets the latest (as of 2017-10-19) stable release of riemann: [riemann 0.2.14](https://github.com/riemann/riemann/releases/tag/0.2.14)
 
 * [Image Details](#image-details)
-  * [Build / Docker Image Status](#build--docker-image-status)
+  * [Docker Image Details](#docker-image-details)
 * [Quickstart](#quickstart)
 * [Configuration](#configuration)
   * [Injecting Config](#injecting-config)
@@ -18,9 +18,8 @@ ENTRYPOINT ["bin/riemann"]
 CMD ["/config/riemann.config"]
 ```
 
-### Build / Docker Image Status
+### Docker Image Details
 
-[![Build Status Status](https://travis-ci.org/TransactCharlie/docker-riemann.svg?branch=master)](https://travis-ci.org/TransactCharlie/docker-riemann)
 [![](https://images.microbadger.com/badges/image/transactcharlie/riemann.svg)](https://microbadger.com/images/transactcharlie/riemann "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/version/transactcharlie/riemann.svg)](https://microbadger.com/images/transactcharlie/riemann "Get your own version badge on microbadger.com")
 [![](https://images.microbadger.com/badges/commit/transactcharlie/riemann.svg)](https://microbadger.com/images/transactcharlie/riemann "Get your own commit badge on microbadger.com")
