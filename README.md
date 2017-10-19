@@ -21,8 +21,9 @@ CMD ["/config/riemann.config"]
 ### Build / Docker Image Status
 
 [![Build Status Status](https://travis-ci.org/TransactCharlie/docker-riemann.svg?branch=master)](https://travis-ci.org/TransactCharlie/docker-riemann)
-[![](https://images.microbadger.com/badges/image/transactcharlie/riemann.svg)](https://microbadger.com/images/transactcharlie/riemann "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/transactcharlie/riemann.svg)](https://microbadger.com/images/transactcharlie/riemann "Get your own version badge on microbadger.com")
-</p>
+[![](https://images.microbadger.com/badges/image/transactcharlie/riemann.svg)](https://microbadger.com/images/transactcharlie/riemann "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/transactcharlie/riemann.svg)](https://microbadger.com/images/transactcharlie/riemann "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/commit/transactcharlie/riemann.svg)](https://microbadger.com/images/transactcharlie/riemann "Get your own commit badge on microbadger.com")
 
 ## Quickstart
 
